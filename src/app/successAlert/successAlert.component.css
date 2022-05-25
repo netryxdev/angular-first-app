@@ -1,0 +1,20 @@
+.success {
+    background-color: rgb(141, 235, 141);
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    width: 18%;
+    justify-content: center;
+    align-items: center;
+    border-color: palegreen;
+    border-style: double;
+}
+.success p {
+    color: green;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 3%;
+    margin-top: 5px;
+}
