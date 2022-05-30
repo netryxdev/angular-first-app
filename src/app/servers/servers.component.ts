@@ -12,21 +12,46 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
   serverName = 'TestServer';
+  verify = false;
+  userName: string = '';
 
   constructor() { 
     setTimeout(() => {
       this.allowNewServer = true;
+      this.verifyUsername()
     }, 2000)
   }
 
   ngOnInit(): void {
+    this.verifyUsername()
   }
 
   onCreateServer() {
     this.serverCreationStatus = 'The server was created!';
+    
   }
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+    console.log(this.serverName);
+  }
+
+  verifyUsername() {
+    if(this.userName == ''){
+      
+      return this.verify = true;
+      
+    } 
+    else {
+      console.log(this.userName)
+      return this.verify = false;
+      
+    }
+    
+  }
+
+  resetUserName() {
+    this.userName = '';
+    console.log(this.userName)
   }
 }
