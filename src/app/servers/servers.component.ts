@@ -18,12 +18,11 @@ export class ServersComponent implements OnInit {
   constructor() { 
     setTimeout(() => {
       this.allowNewServer = true;
-      this.verifyUsername()
     }, 2000)
   }
 
   ngOnInit(): void {
-    this.verifyUsername()
+
   }
 
   onCreateServer() {
@@ -36,7 +35,9 @@ export class ServersComponent implements OnInit {
     console.log(this.serverName);
   }
 
-  verifyUsername() {
+  // Task 2 solved ✔
+
+  /* verifyUsername() {
     if(this.userName == ''){
       
       return this.verify = true;
@@ -53,5 +54,5 @@ export class ServersComponent implements OnInit {
   resetUserName() {
     this.userName = '';
     console.log(this.userName)
-  }
+  } */
 }
