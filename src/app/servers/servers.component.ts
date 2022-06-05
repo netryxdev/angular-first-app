@@ -9,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  allowNewServer = false;
-  serverCreationStatus = 'No server was created!';
-  serverName = 'TestServer';
-  verify = false;
+  allowNewServer: boolean = false;
+  serverCreationStatus: string = 'No server was created!';
+  serverName: string = 'TestServer';
+  verify: boolean = false;
   userName: string = '';
-  serverCreated = false;
+  serverCreated: boolean = false;
+  servers = ['Testserver', 'Testserver2'];
+  showDetails: boolean = false;
+  logClickArray: number[] = [];
+  lastNumbers: string = this.logClickArray.length.toString();
+  logCounter: number = 0;
 
   constructor() { 
     setTimeout(() => {
@@ -28,8 +33,8 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'The server was created!';
-    
   }
 
   onUpdateServerName(event: Event) {
@@ -39,7 +44,7 @@ export class ServersComponent implements OnInit {
 
   // Task 2 solved ✔
 
-  /* verifyUsername() {
+  verifyUsername() {
     if(this.userName == ''){
       
       return this.verify = true;
@@ -56,5 +61,16 @@ export class ServersComponent implements OnInit {
   resetUserName() {
     this.userName = '';
     console.log(this.userName)
-  } */
+  }
+
+  displayDetails() {
+    this.showDetails = true; 
+    this.logCounter = this.logCounter++
+    this.logClickArray.push(this.logCounter++)
+    console.log(this.logCounter)
+  }
+
+  changeColorLog() {
+    return this.logCounter >= 5 ? 'lightskyblue' : null
+  }
 }
