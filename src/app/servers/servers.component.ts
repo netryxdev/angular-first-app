@@ -16,7 +16,7 @@ export class ServersComponent implements OnInit {
   userName: string = '';
   serverCreated: boolean = false;
   servers = ['Testserver', 'Testserver2'];
-  showDetails: boolean = false;
+  
   logClickArray: number[] = [];
   lastNumbers: string = this.logClickArray.length.toString();
   logCounter: number = 0;
@@ -61,16 +61,5 @@ export class ServersComponent implements OnInit {
   resetUserName() {
     this.userName = '';
     console.log(this.userName)
-  }
-
-  displayDetails() {
-    this.showDetails = true; 
-    this.logCounter = this.logCounter++
-    this.logClickArray.push(this.logCounter++)
-    console.log(this.logCounter)
-  }
-
-  changeColorLog() {
-    return this.logCounter >= 5 ? 'lightskyblue' : null
   }
 }
